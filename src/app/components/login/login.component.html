@@ -1,0 +1,38 @@
+<div class="cartas">
+    <mat-card class="img1">
+        <h1>Nuestra propia red social</h1>
+
+        <div class="slider-frame">
+            <ul>
+                <li><img src="assets/images/ciencia-de-los-datos.png" alt=""></li>
+                <li><img src="assets/images/circuito-electrico.png" alt=""></li>
+                <li><img src="assets/images/desarrollador.png" alt=""></li>
+                <li><img src="assets/images/industrial.png" alt=""></li>
+                <li><img src="assets/images/ingenieria.png" alt=""></li>
+                <li><img src="assets/images/presupuesto.png" alt=""></li>
+            </ul>
+        </div>
+    </mat-card>
+
+
+    <mat-card class="cuerpo">
+        <h1>Inicia sesion</h1>
+        <form class="login" (ngSubmit)="login()" [formGroup]="loginUsuario">
+            <p>Correo institucional:</p>
+            <div class="input-box">
+                <input type="email" formControlName="email" placeholder="ejemplo@tesch.edu.mx" required>
+            </div>
+            <p>Contraseña:</p>
+            <div class="input-box">
+                <input type="password" formControlName="password" placeholder="Inserta tu contraseña" formControlName="password">
+            </div>
+            <div class="remember-forgot">
+                <a href="rpassword/">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button type="submit">Iniciar sesion</button>
+            <div class="register-link">
+                <p>¿No tienes cuenta?<a href="register/">¡Registrate ahora!</a></p>
+            </div>
+        </form>
+    </mat-card>
+</div>

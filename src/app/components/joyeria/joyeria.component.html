@@ -1,18 +1,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 id="lowest-price"></h2>
+            <h2>Precio más bajo: ${{ lowestPrice }}</h2>
         </div>
     </div>
     <div class="row">
-        <ng-container *ngFor="let item of productList | filter:searchKey:'title'">
+        <ng-container *ngFor="let item of jewelryProducts">
             <div class="card col-md-3">
                 <img src="{{item.image}}" alt="">
                 <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>
                 <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.description}}</p>
-                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.category}}</p>
                 <p><strong>Precio:</strong>${{item.price}}</p>
-                <button class="btn btn-primary" (click)="addToCart(item)">Añadir al carrito</button>
+                <!-- <button class="btn btn-primary" (click)="addToCart(item)">Añadir al carrito</button> -->
             </div>
         </ng-container>
     </div>

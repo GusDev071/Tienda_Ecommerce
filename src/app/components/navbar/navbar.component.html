@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="products/">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="/products">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Acerca de nosotros</a>
@@ -18,9 +18,38 @@
                 </button>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" (input)="onSearch($event)">
+                <input class="form-control me-2" type="search" [(ngModel)]="searchTerm" (keyup)="search($event)" name="search" placeholder="Buscar">
                 <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
     </div>
 </nav>
+
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a href="/products">
+                <img src="assets/img/bienes.png" alt="">
+                <h4>Todos los productos</h4>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/electronica">
+                <img src="assets/img/comercio-electronico.png" alt="">
+                <h4>Electronicos</h4>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/ropa">
+                <img src="assets/img/productos-cosmeticos.png" alt="">
+                <h4>Ropa</h4>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/joyeria">
+                <img src="assets/img/joyeria.png" alt="">
+                <h4>Joyería</h4>
+            </a>
+        </div>
+    </div>
+</div>

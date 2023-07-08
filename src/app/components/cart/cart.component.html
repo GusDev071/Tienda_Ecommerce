@@ -33,7 +33,6 @@
                             <td><button (click)="emptycart()" class="btn btn-danger">Vaciar</button></td>
                             <td><button routerLink="/products" class="btn btn-primary">Más</button></td>
                             <td><button class="btn btn-success" (click)="onPurchase()">Listo</button></td>
-                            <ngb-alert *ngIf="purchaseSuccess" [type]="'success'" [dismissible]="false">Productos comprados con éxito</ngb-alert>
                             <td><strong>Precio total : $ {{grandTotal}}</strong></td>
                         </tr>
                     </tbody>

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Insertar producto</h2>
+      <form (submit)="insertProduct()">
+        <div class="form-group">
+          <label for="title">Título:</label>
+          <input type="text" class="form-control" id="title" [(ngModel)]="title" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Precio:</label>
+          <input type="number" class="form-control" id="price" [(ngModel)]="price" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Descripción:</label>
+          <textarea class="form-control" id="description" [(ngModel)]="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image">Imagen:</label>
+          <input type="text" class="form-control" id="image" [(ngModel)]="image" required>
+        </div>
+        <div class="form-group">
+          <label for="category">Categoría:</label>
+          <input type="text" class="form-control" id="category" [(ngModel)]="category" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Insertar</button>
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,15 @@
+.example-form {
+    margin-top: 20px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: 20px;
+}
+  
+.example-full-width {
+  width: 100%;
+}
+  
+.btn{
+  text-align: right;
+}

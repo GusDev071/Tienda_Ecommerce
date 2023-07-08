@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { CartService } from '../../service/cart.service';
 
 @Component({
@@ -9,16 +7,9 @@ import { CartService } from '../../service/cart.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  totalItem: number = 0;
-  searchResults: any[] = [];
-  search = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(200),
-      distinctUntilChanged(),
-      map(term => term.length < 2 ? []
-        : this.cartService.searchProducts(term))
-    );
-
+  public totalItem: number = 0;
+  public searchTerm: string = '';
+  
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -27,23 +18,10 @@ export class NavbarComponent implements OnInit {
         this.totalItem = res.length;
       });
   }
-
-  formatResult(result: any): string {
-    return result.name;
+  search(event: any) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartService.search.next(this.searchTerm);
   }
-
-  formatInput(input: any): string {
-    return input.name || '';
-  }
-
-  onSearch(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    const query = target.value;
-    if (query) {
-      const keywords = query.split(' ');
-      this.searchResults = this.cartService.searchProducts(keywords.join(' '));
-    } else {
-      this.searchResults = [];
-    }
-  }
+ 
 }

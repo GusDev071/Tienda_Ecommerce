@@ -5,10 +5,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  searchProducts(term: string): any {
-    throw new Error('Method not implemented.');
-  }
-
+ 
+public search = new BehaviorSubject<string>("");
 public cartItemList: any = [];
 public productList = new BehaviorSubject<any>([]);
 
